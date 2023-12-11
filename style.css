@@ -21,6 +21,12 @@
 .main-nav a{
     margin-top: 10px;
 }
+
+.main-nav i{
+    color: black;
+    margin-top: 10px;
+    font-size: 20px;
+}
 nav a{
     text-decoration: none;
     list-style: none;
@@ -47,7 +53,10 @@ nav a{
 
 .search input{
     width: 250px;
-    height: 30px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: #F7F7F7;
+    border: 1px solid #A5A5A5;
 }
 
 .search button{
@@ -197,7 +206,40 @@ border-radius: 50px;
 }
 
 .sub-parent-footer a,p{
-    font-size: 12px;
+    font-size: 16px;
+    /* padding: 5px 0; */
+}
+
+.sub1 h3{
+    padding: 3px 0;
+}
+
+.sub2 h3{
+    padding: 3px 0;
+}
+
+.sub3 h3{
+    padding: 3px 0;
+}
+
+.sub1 h3{
+    padding: 3px 0;
+}
+
+.sub4 input{
+    width: 200px;
+    height: 32px;
+}
+
+.sub4 button{
+    padding: 10px 20px;
+    background-color: #114B0B;
+    /* background: transparent; */
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-top: 15px;
 }
 
 .sub-parent-footer{
@@ -207,4 +249,213 @@ border-radius: 50px;
     /* margin: 0 30px; */
 }
 
+.footer{
+    background-color: #040404;
+}
 
+.parent-footer{
+    display: flex;
+    margin-left: 100px;
+    padding: 50px 0;
+}
+
+.parent-footer h3{
+    color: white;
+}
+
+.parent-footer .footer1,.footer2{
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+}
+
+.parent-footer .footer2 a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 0;
+}
+
+.parent-footer .footer1 a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 0;
+}
+
+
+/* LOGIN SECTION  */
+
+.login-form{
+    margin: 100px 0;
+}
+
+.parent-login{
+    display: flex;
+    justify-content: space-around;
+}
+
+.login-child1 .sub-login-child1a input{
+    width: 480px;
+    height: 40px;
+    margin: 10px 0;
+    border: 1px solid #A5A5A5;
+    padding-left: 15px;
+    border-radius: 3px;
+}
+
+.sub-login-child1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.out-signin{
+    display: flex;
+    flex-direction: column;
+}
+
+.out-signin button{
+    padding: 10px 45px;
+    /* background-color: #114B0B; */
+    background: transparent;
+    color: black;
+    border: 1px solid #A5A5A5;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.out-signin button i{
+    padding: 0 8px;
+}
+
+.login-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-btn a{
+    margin-top: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+.login-child1 button{
+    width: 500px;
+    height: 42px;
+    background-color: #114B0B;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+    color: white;
+
+}
+
+.sub-login-child1 a{
+    text-decoration: none;
+    color: #114B0B;
+    font-size: 14px;
+}
+
+.sub-login-child1 span{
+    font-size: 14px;
+}
+
+
+/* SIGNUP SECTION  */
+.signup-form{
+    margin: 100px 0;
+}
+
+.parent-signup{
+    display: flex;
+    justify-content: space-around;
+}
+
+.signup-child1 .sub-signup-child1a input{
+    width: 247px;
+    height: 40px;
+    margin: 10px 0;
+    border: 1px solid #A5A5A5;
+    padding-left: 15px;
+    border-radius: 3px;
+}
+
+.sub-signup-child1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.out-signup{
+    display: flex;
+    flex-direction: column;
+}
+
+.out-signup button{
+    padding: 10px 45px;
+    /* background-color: #114B0B; */
+    background: transparent;
+    color: black;
+    border: 1px solid #A5A5A5;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.out-signup button i{
+    padding: 0 8px;
+}
+
+.signup-child1 button{
+    width: 540px;
+    height: 42px;
+    background-color: #114B0B;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+    color: white;
+
+}
+
+.sub-signup-email input{
+    width: 515px;
+    height: 40px;
+    margin: 10px 0;
+    border: 1px solid #A5A5A5;
+    padding-left: 15px;
+    border-radius: 3px;
+}
+
+.sub-signup-no input{
+    width: 515px;
+    height: 40px;
+    margin: 10px 0;
+    border: 1px solid #A5A5A5;
+    padding-left: 15px;
+    border-radius: 3px;
+}
+
+.sub-signup-pass input{
+    width: 515px;
+    height: 40px;
+    margin: 10px 0;
+    border: 1px solid #A5A5A5;
+    padding-left: 15px;
+    border-radius: 3px;
+}
+
+.sub-signup-child1{
+    display: flex;
+    margin: 10px 0;
+}
+
+.sub-signup-child1 a{
+    /* margin-top: 30px; */
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sub-signup-child1 span{
+    font-size: 14px;
+}
