@@ -459,3 +459,90 @@ border-radius: 50px;
 .sub-signup-child1 span{
     font-size: 14px;
 }
+
+/* PRODUCT DASHBOARD */
+.parent-dashboard{
+    display: flex;
+    margin: 50px 50px;
+}
+
+.sidebar-menu{
+    background-color: #F4F3F3;
+    padding: 40px;
+    border-radius: 10px;
+
+}
+
+.sidebar1{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.sidebar1 a{
+    text-decoration: none;
+    color: black;
+    padding: 4px 0;
+}
+
+.sidebar2 input{
+    height: 30px;
+    margin-top: 10px;
+    width: 65px;
+}
+
+.sidebar2 h2{
+    margin-top: 10px;
+}
+
+.sidebar2 button{
+    width: 165px;
+    height: 40px;
+    background-color: #114B0B;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+    color: white;
+}
+
+.sidebar2 span{
+    margin: 0 5px;
+}
+
+.dashboard-children{
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dashboard-container{
+    margin: 0 10px;
+}
+
+.product-img{
+    background-image: url(1\ \(1\).jpg);
+    height: 35vh;
+    width: 35vh;
+    background-size: cover;
+}
+
+.dashboard-children button{
+    width: 220px;
+    height: 40px;
+    background-color: #114B0B;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+    color: white;
+}
+
+.stars i{
+    color: #FFA901;
+}
+
+/* .stars .outline{
+    color: white;
+    border: 1px solid #FFA901;
+} */
+
+
