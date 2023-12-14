@@ -18,7 +18,7 @@
     <section class="nav">
         <nav>
         <div class="main-nav">     
-            <a href="#" class="logo">NIARA</a>
+            <a href="index.html" class="logo">NIARA</a>
             <a href="">How it works</a>
             <a href="#">Sell on Niara</a>
             <div class="search">
@@ -26,11 +26,11 @@
                 <button type="submit">Search</button>
             </div>
             <i class="fa-regular fa-user"></i>
-            <a href="login.html">Login/Sign Up</a>
+            <a href="#">Login/Sign Up</a>
             <i class="fa-regular fa-circle-question"></i>
             <a href="#">FAQ</a>
-            <i class="fa-regular fa-cart-shopping"></i>
-            <a href="#">Cart</a>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <a href="cart.html">Cart</a>
         </div>
 
         </nav>
@@ -47,55 +47,6 @@
          <li>Pharmacy & Drug</li>
          <li>Other Categories</li>
        </ul>
-    </section>
-
-    <section class="hero">
-        <div class="hero-text">
-            <div class="hero1">
-              <h1>
-                 Everything You Need is<br>
-                 Niara Than You Think!
-              </h1>
-            </div>
-            <div class="hero-btn">
-                <button>Create Account</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="banner">
-        <div class="banner-parent">
-            <div class="banner-child1">
-                <div class="sub-child1">
-                  <h1>Get whatever you need without<br> leaving where you are</h1>
-                  <p>Shop groceries, food/ daily essentials, gadgets, fashion items, medicine, on<br> Niara and have it at your doorstep same day, in 1 hour or even less! T&C</p>
-                  <button>Sign Up</button>
-                </div>
-            </div>
-            <div class="banner-child2">
-                <!-- Banner Picture -->
-            </div>
-        </div>
-    </section>
-
-    <section class="vendor-sec">
-        <div class="vendor">
-            <div class="vendor1">
-                <p>
-                    Want to sell your Items on our markespace
-                </p>
-            </div>
-            <div class="vendor2">
-                <button>Request Merchant Account</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="promoinfo">
-        <div class="promo">
-            <h3>Best online platform to shop.</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum lorem neque, a porttitor tortor imperdiet vitae. Praesent sit amet semper purus, ut maximus<br> ipsum. Vivamus rhoncus, magna convallis vehicula suscipit, nulla enim volutpat erat, eget condimentum odio nisl in lacus. Integer diam eros, condimentum id<br> scelerisque vel, congue a elit. Sed eget orci in est sodales suscipit ac nec est. Nulla fermentum nunc consequat, iaculis elit at, tempus nunc. Maecenas condimentum<br> dignissim metus at laoreet. Proin et accumsan tellus. Ut accumsan nunc non nulla accumsan accumsan. Sed id metus erat. Nam ut tortor congue, vehicula augue sed, faucibus est.</p>
-        </div>
     </section>
 
     <section class="sub-footer">
@@ -122,6 +73,12 @@
         </div>
     </section>
 
+    <section class="cart" href="dashboard.html">
+        <ul id="cart">
+            <!-- Cart items will appear here -->
+          </ul>
+    </section>
+
     <section class="footer">
         <div class="parent-footer">
             <div class="footer1">
@@ -140,5 +97,66 @@
         </div>
 
     </section>
+    
+
+    <script>
+        // Cart data
+        const cart = [];
+      
+        // Function to add items to the cart
+        function addToCart(productId, productName, productPrice) {
+          const existingItem = cart.find(item => item.id === productId);
+      
+          if (existingItem) {
+            // If the item is already in the cart, increase the quantity
+            existingItem.quantity += 1;
+          } else {
+            // If the item is not in the cart, add it with quantity 1
+            cart.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
+          }
+      
+          // Update the cart display
+          updateCartDisplay();
+        }
+      
+        // Function to update the cart display
+        function updateCartDisplay() {
+          const cartElement = document.getElementById('cart');
+          const cartCounterElement = document.getElementById('cart-counter');
+      
+          // Update the cart counter
+          const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+          cartCounterElement.textContent = totalItems;
+      
+          // Clear the current cart display
+          cartElement.innerHTML = '';
+      
+          // Populate the cart display with the updated cart data
+          cart.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.name} - $${item.price} x ${item.quantity} `;
+            
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.onclick = () => removeFromCart(item.id);
+      
+            li.appendChild(removeButton);
+            cartElement.appendChild(li);
+          });
+        }
+      
+        // Function to remove items from the cart
+        function removeFromCart(productId) {
+          const itemIndex = cart.findIndex(item => item.id === productId);
+      
+          if (itemIndex !== -1) {
+            // Remove the item from the cart
+            cart.splice(itemIndex, 1);
+      
+            // Update the cart display
+            updateCartDisplay();
+          }
+        }
+      </script>
 </body>
 </html>

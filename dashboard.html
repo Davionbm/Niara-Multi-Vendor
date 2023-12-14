@@ -29,8 +29,8 @@
             <a href="#">Login/Sign Up</a>
             <i class="fa-regular fa-circle-question"></i>
             <a href="#">FAQ</a>
-            <i class="fa-regular fa-cart-shopping"></i>
-            <a href="#">Cart</a>
+            <i class="fa-solid fa-cart-shopping" id="cart-counter">0</i>
+            <a href="cart.html">Cart</a>
         </div>
 
         </nav>
@@ -73,13 +73,13 @@
             <!-- PRODUCT -->
             <div class="dashboard-children">
                 <div class="dashboard-container">
-                   <div class="product-img">
+                   <div class="product-img" href="product1.html">
                       <!-- IMAGE -->
                    </div>
                    <p>Product Name</p>
                    <b><p>N 4,180</p></b>
                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star outline"></i></div><br>
-                   <button>ADD TO CART</button>
+                   <button data-id="1" onclick="addToCart(1, 'Product A', 10)">ADD TO CART</button>
                 </div>
 
                 <div class="dashboard-container">
@@ -242,5 +242,64 @@
 
     </section>
     
+    <script>
+      // Cart data
+      const cart = [];
+    
+      // Function to add items to the cart
+      function addToCart(productId, productName, productPrice) {
+        const existingItem = cart.find(item => item.id === productId);
+    
+        if (existingItem) {
+          // If the item is already in the cart, increase the quantity
+          existingItem.quantity += 1;
+        } else {
+          // If the item is not in the cart, add it with quantity 1
+          cart.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
+        }
+    
+        // Update the cart display
+        updateCartDisplay();
+      }
+    
+      // Function to update the cart display
+      function updateCartDisplay() {
+        const cartElement = document.getElementById('cart');
+        const cartCounterElement = document.getElementById('cart-counter');
+    
+        // Update the cart counter
+        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+        cartCounterElement.textContent = totalItems;
+    
+        // Clear the current cart display
+        cartElement.innerHTML = '';
+    
+        // Populate the cart display with the updated cart data
+        cart.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = `${item.name} - $${item.price} x ${item.quantity} `;
+          
+          const removeButton = document.createElement('button');
+          removeButton.textContent = 'Remove';
+          removeButton.onclick = () => removeFromCart(item.id);
+    
+          li.appendChild(removeButton);
+          cartElement.appendChild(li);
+        });
+      }
+    
+      // Function to remove items from the cart
+      function removeFromCart(productId) {
+        const itemIndex = cart.findIndex(item => item.id === productId);
+    
+        if (itemIndex !== -1) {
+          // Remove the item from the cart
+          cart.splice(itemIndex, 1);
+    
+          // Update the cart display
+          updateCartDisplay();
+        }
+      }
+    </script>
 </body>
 </html>
